@@ -24,7 +24,7 @@ def main():
     else:
         print ("\n[*] Cookie Value String to decode: %s\n"%options.cookie)
 
-# Cookie  will be in format as show in example , the set cookie  with (key:value) pairs  for pools in Non default Route Domains is as  BIGipServer<pool_name>:rd5o00000000000000000000ffffc0000201o80
+# Set cookie  with (key:value) pair  for pools in Non default Route Domains is as  BIGipServer<pool_name>:rd5o00000000000000000000ffffc0000201o80
 
         if ((options.cookie).startswith('rd')):
             (Routedomain,encodedIp,port) = (options.cookie).split("o")
@@ -32,7 +32,7 @@ def main():
             decodedip = decode_cookie_rd(ip)
             print ("[*] Decocded IP and port from the  cookie with RouteDomain ID is  : %s%%%s:%s"%(decodedip,(Routedomain.split('d')[1]),port))
 
-# Cookie  will be in format as show in example , the  default set cookie  with (key:value) pairs is as   BIGipServer<pool_name>:1677787402.36895.0000
+# Default set cookie  with (key:value) pair is as   BIGipServer<pool_name>:1677787402.36895.0000
         else:
             (ip,port,end) = (options.cookie).split(".")
             print ("[*] Decocded  IP and port  value from the cookie is :  %s:%s\n"%(decode_cookie(ip,port)))
