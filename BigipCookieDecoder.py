@@ -30,12 +30,12 @@ def main():
             (Routedomain,encodedIp,port) = (options.cookie).split("o")
             ip = encodedIp.split('ffff')[1]
             decodedip = decode_cookie_rd(ip)
-            print ("[*] Decocded IP and port from the  cookie with RouteDomain ID is  : %s%%%s:%s"%(decodedip,(Routedomain.split('d')[1]),port))
+            print ("[*] Decoded IP and port from the  cookie having RouteDomain ID is  : %s%%%s:%s"%(decodedip,(Routedomain.split('d')[1]),port))
 
 # Default set cookie  with (key:value) pair is as   BIGipServer<pool_name>:1677787402.36895.0000
         else:
             (ip,port,end) = (options.cookie).split(".")
-            print ("[*] Decocded  IP and port  value from the cookie is :  %s:%s\n"%(decode_cookie(ip,port)))
+            print ("[*] Decoded  IP and port  value from the cookie is :  %s:%s\n"%(decode_cookie(ip,port)))
 
 if __name__ =="__main__":
     main()
