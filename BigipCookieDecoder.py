@@ -6,11 +6,11 @@ def decode_cookie(ip,port):
     (a,b,c,d) = [i for i in struct.pack("<I",int(ip))]
     p = [i for i in struct.pack("<H",int(port))]
     port = "0x%02X%02X"%(p[0],p[1])
-    return ('.'.join(map(str,[a,b,c,d,]))), int(port,16)
+    return ('.'.join(map(str,[a,b,c,d]))), int(port,16)
 
 def decode_cookie_rd(ip):
     (a, b, c, d) = [i for i in struct.pack(">I", int(ip,16))]
-    return '.'.join(map(str,[a,b,c,d,]))
+    return '.'.join(map(str,[a,b,c,d]))
 
 
 def main():
